@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:28:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/11 17:37:25 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/11 21:21:44 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new -> next = (*lst)-> next;
-	(*lst)-> next = new;
+	new -> next = (*lst);
+	(*lst) = new;
 }
