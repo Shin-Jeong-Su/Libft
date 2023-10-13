@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   lst_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:24:20 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/13 17:34:39 by jeshin           ###   ########.fr       */
+/*   Created: 2023/10/12 18:30:46 by jeshin            #+#    #+#             */
+/*   Updated: 2023/10/13 22:46:44 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstnew(void *content)
+#include <stdio.h>
+int main(void)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	new -> content = content;
-	new -> next = 0;
-	return (new);
+	t_list **header = (t_list **)malloc(sizeof(t_list **));
+	for (int i = 0; i < 4; i++)
+	{
+		int n = i;
+		t_list *new = ft_lstnew(&n);
+		ft_lstadd_back(header, new);
+	}
+	while (*header)
+	{
+		printf("%d\n", *(int *)(*header)->content);
+		*header = (*header)->next;
+	}
 }
