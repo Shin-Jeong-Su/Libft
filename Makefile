@@ -6,11 +6,8 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = crus
 
-INCLUDES = ./includes
-
 RM = rm -f
 
-SRCS_DIR = ./srcs
 SRCS_FILES = ft_isalpha.c\
 				ft_isdigit.c\
 				ft_atoi.c\
@@ -57,18 +54,17 @@ SRCS_FILES = ft_isalpha.c\
 				ft_tolower.c\
 				ft_toupper.c\
 
-SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
+SRCS = $(SRCS_FILES)
 
-OBJS_DIR = ./srcs
-OBJS_FILES = $(SRCS_FILES:.c=.o)
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-$(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
+
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	$(RM) $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:32:19 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/14 18:54:00 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/14 21:29:58 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
 	i = 0;
 	while (src[i])
 		i++;
+	if(!size)
+		return (i);
 	size--;
 	while (*src && size)
 	{

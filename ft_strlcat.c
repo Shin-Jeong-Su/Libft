@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:08:54 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/05 20:31:10 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/14 21:48:38 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	while (src[len_src])
 		len_src++;
 	if (len_dst >= size)
-		return (len_dst + size);
+		return (len_src + size);
 	size = size - len_dst - 1;
 	while (*src && size--)
 	{
