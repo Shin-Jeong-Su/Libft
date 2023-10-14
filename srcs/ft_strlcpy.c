@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:32:19 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/05 20:08:17 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/14 18:54:00 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size)
 	i = 0;
 	while (src[i])
 		i++;
-	dstsize--;
-	while (*src && dstsize)
+	size--;
+	while (*src && size)
 	{
 		*dst = *src;
 		dst++;
 		src++;
-		dstsize--;
+		size--;
 	}
 	*dst = 0;
 	return (i);

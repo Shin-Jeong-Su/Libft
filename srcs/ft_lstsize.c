@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:37:59 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/11 21:27:18 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/14 18:51:20 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_lstsize(t_list *lst)
 		size++;
 		lst = lst-> next;
 	}
-	retrun (size);
+	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 20:05:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/11 20:45:43 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/14 19:03:59 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = (*lst)-> next;
 		free(prv);
 	}
-
 }
