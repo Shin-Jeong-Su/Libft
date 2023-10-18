@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:15:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 15:53:07 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/15 22:08:22 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*pos;
-	int		i;
+	unsigned char	*pos;
+	size_t			i;
 
 	i = 0;
-	pos = (char *)malloc(count * size);
-	while (pos[i])
+	pos = (unsigned char *)malloc(count * size);
+	if (!pos)
+		return (0);
+	while (i < count * size)
 	{
-		pos = 0;
-		i++;
+		pos[i++] = 0;
 	}
 	return ((void *)pos);
 }
@@ -31,12 +31,13 @@ void	*ft_calloc(size_t count, size_t size)
 #include <stdio.h>
 int main()
 {
-	int *p1 = ft_calloc(100,sizeof(int));
-	int *p2 = calloc(100,sizeof(int));
-	for(int i=0;i<100;i++)
+	int	c = 0;
+	int *p1 = ft_calloc((size_t)c,sizeof(int));
+	int *p2 = calloc((size_t)c,sizeof(int));
+	for(int i=0;i<c;i++)
 		printf("%d",p1[i]);
 	printf("\n");
-	for(int i=0;i<100;i++)
+	for(int i=0;i<c;i++)
 		printf("%d",p2[i]);
 }
 */

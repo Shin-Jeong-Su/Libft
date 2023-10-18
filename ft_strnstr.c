@@ -3,37 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:36:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 13:12:11 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/18 15:03:37 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	is_same_str(const char *s1, const char *s2, size_t n)
+{
+	while (n && *s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (1);
+		s1++;
+		s2++;
+		n--;
+	}
+	if (*s2 && (!n || !*s1))
+		return (-1);
+	return (0);
+}
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*temp_h;
-	char	*temp_n;
+	size_t		i;
+	int			check;
 
-	while (*haystack && len--)
+	i = 0;
+	if (!*needle)
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
 	{
-		if (*haystack == *needle || *needle == 0)
+		if (haystack[i] == *needle)
 		{
-			temp_n = (char *)needle;
-			temp_h = (char *)haystack;
-			while (*temp_n)
-			{
-				if (*temp_n != *temp_h)
-					break ;
-				temp_n++;
-				temp_h++;
-			}
-			if (*temp_n == 0)
-				return ((char *)haystack);
+			check = is_same_str(&haystack[i], needle, len - i);
+			if (!check)
+				return (&((char *)haystack)[i]);
+			else if (check == -1)
+				return (0);
 		}
-		haystack++;
+		i++;
 	}
 	return (0);
 }
@@ -42,10 +54,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 #include <string.h>
 int main()
 {
-	const char *h = "hello wolrd";
-	const char *n = " ";
-	printf("%s\n",ft_strnstr(h,n,20));
-	printf("%s\n",strnstr(h,n,20));
-
+	printf("%s\n",ft_strnstr("teste","",0));
+	printf("%s\n",ft_strnstr("abcdefgh","abc",2));
+	printf("%s\n",ft_strnstr("aaxx","xx",4));
+	printf("%s\n",ft_strnstr("lorem ipsum dolor sit amet", "lorem", 15));
+	printf("%s\n",ft_strnstr("aaabcabcd", "abcd", 9));
 }
 */

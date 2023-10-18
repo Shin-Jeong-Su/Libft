@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 22:06:10 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/10 23:13:47 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/17 16:15:53 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,34 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
+	char		c;
+	long long	l;
 
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
+	l = n;
+	if (n < 0)
+	{
+		l *= -1;
+		write(fd, "-", 1);
+	}
+	if (l < 10)
+	{
+		c = l + '0';
+		write(fd, &c, 1);
+		return ;
+	}
+	else if (l >= 10)
+	{
+		ft_putnbr_fd(l / 10, fd);
+		c = (l % 10) + '0';
+		write(fd, &c, 1);
+		l /= 10;
+	}
 }
 /*
 int main()
 {
-	ft_putnbr_fd(-2147483648,2);
-	ft_putnbr_fd(-2147483647,2);
-	ft_putnbr_fd(-2147483646,2);
-	ft_putnbr_fd(2147483647,2);
+	ft_putnbr_fd(-2147483648,1);
+	write(1,"\n\n",3);
+	ft_putnbr_fd(2147483647,1);
 }
 */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:28:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 11:14:37 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/17 16:40:27 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*pos;
+	size_t	len;
 
-	pos = (char *)s;
-	while (*pos)
-		pos++;
-	if (c == 0)
-		return (pos);
-	while (*(--pos))
+	len = ft_strlen(s);
+	if ((unsigned char)c == 0)
+		return ((char *)&s[len]);
+	while (len > 0)
 	{
-		if (*pos == c)
-			return (pos);
+		if ((unsigned char)s[len] == (unsigned char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
+	if ((unsigned char)s[0] == (unsigned char)c)
+		return ((char *)&s[0]);
 	return (0);
 }
 /*
@@ -33,7 +34,7 @@ char	*ft_strrchr(const char *s, int c)
 #include <stdio.h>
 int main()
 {
-	const char *s = "helloworld";
+	const char *s = "h";
 	printf("%s\n",ft_strrchr(s,'h'));
 	printf("%s\n",strrchr(s,'h'));
 	return (0);

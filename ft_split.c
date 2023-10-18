@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:13:17 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/09 18:54:14 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/17 17:44:47 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 size_t	word_count(char const *s, char c)
 {
@@ -20,11 +19,11 @@ size_t	word_count(char const *s, char c)
 
 	ret = 0;
 	i = 0;
+	if (s[i] && s[i] != c)
+		ret++;
 	while (s[i])
 	{
-		if (i == 0 && s[i] != c)
-			ret++;
-		else if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
 			ret++;
 		i++;
 	}
@@ -35,14 +34,20 @@ char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*ret;
 	char	*tmp;
+	size_t	prv_n;
 
-	ret = (char *)malloc(sizeof(char) * n + 1);
+	ret = (char *)malloc(sizeof(char) * (n + 1));
+	if (!ret)
+		return (0);
 	tmp = ret;
-	while (*s1 && n--)
+	while (*s1 && n)
 	{
 		*tmp = *s1;
 		tmp++;
 		s1++;
+		prv_n = n--;
+		if (n > prv_n)
+			break ;
 	}
 	*tmp = 0;
 	return (ret);
@@ -77,7 +82,9 @@ char	**ft_split(char const *s, char c)
 	int			i;
 	int			j;
 
-	ret = (char **)malloc(sizeof(char *) * word_count(s, c) + 1);
+	ret = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!ret)
+		return (0);
 	i = 0;
 	j = 0;
 	tmp = s;
@@ -99,9 +106,8 @@ char	**ft_split(char const *s, char c)
 #include <stdio.h>
 int main()
 {
-	printf("%zd\n",word_count("1-2-3",'-'));
-	char * s= "--123----456--789--";
-	char c = '-';
+	char * s= "";
+	char c = 'z';
 	int i=0;
 	char ** ret = ft_split(s,c);
 	while(ret[i])

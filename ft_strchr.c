@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:28:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 10:57:38 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/17 17:33:19 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*pos;
-
-	pos = (char *)s;
-	while (*pos)
+	while (*s)
 	{
-		if (*pos == c)
-			return (pos);
-		pos++;
+		if ((unsigned char)*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (!c)
-		return (pos);
+	if (!(unsigned char)c)
+		return ((char *)s);
 	return (0);
 }
 /*
@@ -32,9 +29,9 @@ char	*ft_strchr(const char *s, int c)
 #include <stdio.h>
 int main()
 {
-	const char *s = "hello";
-	printf("%s\n",ft_strchr(s,'6'));
-	printf("%s\n",strchr(s,'6'));
+	const char *s = "teste";
+	printf("%p\n",ft_strchr(s,'e'));
+	printf("%p\n",strchr(s,'e'));
 	return (0);
 }
 */

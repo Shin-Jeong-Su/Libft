@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:08:11 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 16:33:58 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/18 18:57:33 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,29 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret;
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 
-	ret = (char *)malloc(sizeof(char) * len + 1);
+	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (0);
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] && (size_t)j < len)
 	{
-		if (i == start)
-		{
-			while (len--)
-			{
-				ret[j] = s[i];
-				i++;
-				j++;
-			}
-			ret[j] = 0;
-			return (ret);
-		}
+		if ((size_t)i >= start)
+			ret[j++] = s[i];
 		i++;
 	}
-	return (0);
+	ret[j] = 0;
+	return (ret);
 }
 /*
 #include <string.h>
 #include <stdio.h>
 int main()
 {
-	char *src = "hello world";
-	printf("%s\n",ft_substr(src,0,10));
+	printf("%s\n",ft_substr("abc",0,12345678900));
+	system("leaks a.out");
 }
 */

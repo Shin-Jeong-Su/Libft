@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:56:14 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/10 23:12:41 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/15 22:23:21 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_digit(int n)
 
 	len = 0;
 	tmp = (long long)n;
+	if (!tmp)
+		return (1);
 	if (tmp < 0)
 	{
 		len++;
@@ -34,12 +36,9 @@ int	check_digit(int n)
 
 void	get_plus(long long *l, int *idx, int *flg, char *str)
 {
-	if (*l < 0)
-	{
-		str[(*idx)++] = '-';
-		*l *= -1;
-		*flg = 0;
-	}
+	str[(*idx)++] = '-';
+	*l *= -1;
+	*flg = 0;
 }
 
 char	*ft_itoa(int n)
@@ -51,13 +50,14 @@ char	*ft_itoa(int n)
 	int			flg;
 
 	len = check_digit(n);
-	ret = (char *)malloc(sizeof(char) * len + 1);
+	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (0);
 	l = (long long)n;
 	i = 0;
 	flg = 1;
-	get_plus(&l, &i, &flg, ret);
+	if (l < 0)
+		get_plus(&l, &i, &flg, ret);
 	while (i < len)
 	{
 		ret[len - i - flg] = l % 10 + '0';
@@ -72,6 +72,7 @@ char	*ft_itoa(int n)
 int main()
 {
 	printf("%s\n",ft_itoa(2147483647));
+	printf("%s\n",ft_itoa(0));
 	printf("%s\n",ft_itoa(-2147483648));
 }
 */
