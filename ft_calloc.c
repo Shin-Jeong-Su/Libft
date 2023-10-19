@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:15:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/15 22:08:22 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:25:37 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!pos)
 		return (0);
 	while (i < count * size)
-	{
 		pos[i++] = 0;
-	}
 	return ((void *)pos);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:28:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/17 16:40:27 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:27:31 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen(s);
 	if ((unsigned char)c == 0)
 		return ((char *)&s[len]);
-	while (len > 0)
+	while (len)
 	{
 		if ((unsigned char)s[len] == (unsigned char)c)
 			return ((char *)&s[len]);

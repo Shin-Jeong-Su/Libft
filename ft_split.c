@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:13:17 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/17 17:44:47 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:37:18 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,7 @@ int	is_deli(char const **s, char c)
 void	is_not_deli(char const **s, char c)
 {
 	while (**s && **s == c)
-	{
 		(*s)++;
-	}
 }
 
 char	**ft_split(char const *s, char c)

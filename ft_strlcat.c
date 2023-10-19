@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:08:54 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/16 11:01:12 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:27:58 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (len_dst >= size)
 		return (len_src + size);
 	size = size - len_dst - 1;
-	while (*src && size--)
+	while (*src && size)
 	{
 		*dst = *src;
 		src++;
 		dst++;
+		size--;
 	}
 	*dst = 0;
 	return (len_dst + len_src);
