@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:28:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 10:30:31 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 14:56:20 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	const char *s = "teste";
-	printf("%p\n",ft_strchr(s,'e'));
-	printf("%p\n",strchr(s,'e'));
-	return (0);
-}
-*/

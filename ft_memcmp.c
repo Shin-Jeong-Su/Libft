@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeshin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:36:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/06 12:35:36 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:08:29 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	const void *s1 = "";
-	const void *s2 = "";
-	printf("%d\n",ft_memcmp(s1,s2,20));
-	printf("%d\n",memcmp(s1,s2,20));
-}
-*/

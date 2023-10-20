@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:56:14 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/15 22:23:21 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:08:56 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,3 @@ char	*ft_itoa(int n)
 	ret[len] = 0;
 	return (ret);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	printf("%s\n",ft_itoa(2147483647));
-	printf("%s\n",ft_itoa(0));
-	printf("%s\n",ft_itoa(-2147483648));
-}
-*/

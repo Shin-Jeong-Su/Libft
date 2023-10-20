@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:36:05 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/18 15:03:37 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:07:19 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	printf("%s\n",ft_strnstr("teste","",0));
-	printf("%s\n",ft_strnstr("abcdefgh","abc",2));
-	printf("%s\n",ft_strnstr("aaxx","xx",4));
-	printf("%s\n",ft_strnstr("lorem ipsum dolor sit amet", "lorem", 15));
-	printf("%s\n",ft_strnstr("aaabcabcd", "abcd", 9));
-}
-*/

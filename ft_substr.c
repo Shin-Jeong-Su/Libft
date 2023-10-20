@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:08:11 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 16:02:29 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:06:59 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ret[j] = 0;
 	return (ret);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	printf("%s\n",ft_substr("hola", 4294967295,0));
-	printf("%s\n",ft_substr("abc",0,12345678900));
-	//system("leaks a.out");
-}
-*/

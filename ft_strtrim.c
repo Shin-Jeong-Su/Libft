@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:52:23 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/17 19:04:45 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:07:06 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret[i] = 0;
 	return (ret);
 }
-/*
-#include<stdio.h>
-int main()
-{	
-	printf("%s\n",ft_strtrim("          "," "));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:08:54 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 10:27:58 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 14:55:06 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	*dst = 0;
 	return (len_dst + len_src);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	char d1[10] = "Hello";
-	char d2[10] = "Hello";
-	char *s1 = "Wolrd";
-	char *s2 = "Wolrd";
-
-	printf("%zu\n",ft_strlcat(d1,s1,3));
-	printf("%s\n",d1);
-	printf("%zu\n",strlcat(d2,s2,3));
-	printf("%s\n",d2);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:54:23 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/17 17:34:32 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:07:52 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,3 @@ char	*ft_strdup(const char *s1)
 	*tmp = 0;
 	return (ret);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	const char *src = "hello world";
-	printf("%s\n",ft_strdup(src));
-	printf("%s\n",strdup(src));
-}
-*/

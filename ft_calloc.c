@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:15:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 10:25:37 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:09:10 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,3 @@ void	*ft_calloc(size_t count, size_t size)
 		pos[i++] = 0;
 	return ((void *)pos);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	int	c = 0;
-	int *p1 = ft_calloc((size_t)c,sizeof(int));
-	int *p2 = calloc((size_t)c,sizeof(int));
-	for(int i=0;i<c;i++)
-		printf("%d",p1[i]);
-	printf("\n");
-	for(int i=0;i<c;i++)
-		printf("%d",p2[i]);
-}
-*/

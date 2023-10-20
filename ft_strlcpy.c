@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:32:19 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/16 11:01:02 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 14:54:36 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	*dst = 0;
 	return (i);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	char d1[10] ="Hello";	
-	char d2[10] ="Hello";	
-	char *s1 ="World";	
-	char *s2 ="World";
-
-	printf("%zu\n",ft_strlcpy(d1,s1,4));
-	printf("%s\n",d1);
-	printf("%zu\n",strlcpy(d2,s2,4));
-	printf("%s\n",d2);
-
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:13:17 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/20 13:57:20 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 16:08:01 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,19 +100,3 @@ char	**ft_split(char const *s, char c)
 	ret[i] = 0;
 	return (ret);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char * s= "hello!    ";
-	char c = ' ';
-	char ** ret = ft_split(s,c);
-	int i=0;
-	while (ret[i])
-	{
-		printf("%s\n",ret[i]);
-		i++;
-	}
-	system("leaks a.out");
-}
-*/
