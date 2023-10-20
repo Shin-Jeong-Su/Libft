@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:13:17 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 10:37:18 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/20 13:57:20 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,88 +30,89 @@ size_t	word_count(char const *s, char c)
 	return (ret);
 }
 
-char	*ft_strndup(const char *s1, size_t n)
+char	*ft_strdup_till_c(const char **s, char c)
 {
 	char	*ret;
-	char	*tmp;
-	size_t	prv_n;
+	int		i;
 
-	ret = (char *)malloc(sizeof(char) * (n + 1));
+	i = 0;
+	while ((*s)[i] && (*s)[i] != c)
+		i++;
+	ret = (char *)malloc(sizeof(char) * (i + 1));
 	if (!ret)
 		return (0);
-	tmp = ret;
-	while (*s1 && n)
+	i = 0;
+	while (**s && **s != c)
 	{
-		*tmp = *s1;
-		tmp++;
-		s1++;
-		prv_n = n--;
-		if (n > prv_n)
-			break ;
+		ret[i] = **s;
+		(*s)++;
+		i++;
 	}
-	*tmp = 0;
+	ret[i] = 0;
 	return (ret);
 }
 
-int	is_deli(char const **s, char c)
+void	is_deli(char const **s, char c)
+{
+	while (**s && **s == c)
+		(*s)++;
+}
+
+void	arr_clear_all(char **arr, int size)
 {
 	int	i;
 
 	i = 0;
-	while (**s && **s != c)
+	while (i < size)
 	{
-		(*s)++;
+		free(arr[i]);
+		arr[i] = 0;
 		i++;
 	}
-	return (i);
-}
-
-void	is_not_deli(char const **s, char c)
-{
-	while (**s && **s == c)
-		(*s)++;
+	free(arr);
+	arr = 0;
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char		**ret;
 	char		*str;
-	char const	*tmp;
 	int			i;
-	int			j;
 
 	ret = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
 	if (!ret)
 		return (0);
 	i = 0;
-	j = 0;
-	tmp = s;
 	while (*s)
 	{
-		i = is_deli(&s, c);
-		if (!*s || (*s == c && tmp != s))
+		is_deli(&s, c);
+		if (*s && (*s != c))
 		{
-			str = ft_strndup(tmp, (size_t)i);
-			ret[j++] = str;
+			str = ft_strdup_till_c(&s, c);
+			if (!str)
+			{
+				arr_clear_all(ret, i);
+				return (0);
+			}
+			ret[i++] = str;
 		}
-		is_not_deli(&s, c);
-		tmp = s;
 	}
-	ret[j] = 0;
+	ret[i] = 0;
 	return (ret);
 }
 /*
 #include <stdio.h>
 int main()
 {
-	char * s= "";
-	char c = 'z';
-	int i=0;
+	char * s= "hello!    ";
+	char c = ' ';
 	char ** ret = ft_split(s,c);
-	while(ret[i])
+	int i=0;
+	while (ret[i])
 	{
 		printf("%s\n",ret[i]);
 		i++;
 	}
+	system("leaks a.out");
 }
 */

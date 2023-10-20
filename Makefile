@@ -63,17 +63,18 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all : $(NAME) 
 
-bonus : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
-
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+bonus : $(OBJS) $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+	touch bonus
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS) bonus
 
 fclean : clean
 	$(RM) $(NAME)
