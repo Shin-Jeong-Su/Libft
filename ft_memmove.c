@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:16:11 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/20 14:54:12 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 18:21:17 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		move_from_front(dst, src, &len);
 	else if (dst > src)
 		move_from_back(dst, src, &len);
-	else
-		return (dst);
 	return (dst);
 }

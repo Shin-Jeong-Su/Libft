@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:08:11 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/20 16:06:59 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 19:15:40 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	len_check(char const *s, unsigned int start, size_t *len)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	len_check(s, start, &len);
 	ret = (char *)malloc(sizeof(char) * (len + 1));
@@ -35,9 +35,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	i = 0;
 	j = 0;
-	while (s[i] && (size_t)j < len)
+	while (s[i] && j < len)
 	{
-		if ((size_t)i >= start)
+		if (i >= start)
 			ret[j++] = s[i];
 		i++;
 	}
