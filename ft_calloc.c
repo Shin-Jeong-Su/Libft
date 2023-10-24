@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:15:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/21 19:03:01 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:09:26 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 
 	i = 0;
-	if (count > (count * size) || size > (count * size))
+	if (size && count > ((size_t) - 1) / size)
 		return (0);
 	pos = (unsigned char *)malloc(count * size);
 	if (!pos)

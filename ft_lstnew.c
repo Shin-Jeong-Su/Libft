@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:24:20 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/18 16:57:09 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:13:42 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (0);
-	new -> content = content;
-	new -> next = 0;
+	new->content = content;
+	new->next = 0;
 	return (new);
 }

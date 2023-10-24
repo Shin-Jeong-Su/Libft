@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:36:53 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/21 19:09:45 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/23 20:42:35 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (n)
+	while (n--)
 	{
 		if (*(unsigned char *)s == (unsigned char)c)
 			return ((void *)s);
 		s++;
-		n--;
 	}
 	return (0);
 }

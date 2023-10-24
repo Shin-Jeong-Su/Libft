@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:57:06 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/21 19:10:09 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:14:24 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (0);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
-	while (n)
+	while (n--)
 	{
 		*d = *s;
 		d++;
 		s++;
-		n--;
 	}
 	return (dst);
 }

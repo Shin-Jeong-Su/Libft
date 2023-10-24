@@ -59,7 +59,7 @@ SRCS = $(SRCS_FILES)
 SRCS_BONUS = $(BONUS_FILES)
 
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+	OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all : $(NAME) 
 

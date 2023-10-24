@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:29:08 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/20 14:52:25 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:14:56 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	while (len)
+	while (len--)
 	{
 		((char *)b)[i] = c;
 		i++;
-		len--;
 	}
 	return (b);
 }

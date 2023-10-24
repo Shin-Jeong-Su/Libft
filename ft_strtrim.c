@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:52:23 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/21 19:14:02 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/10/21 19:24:27 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	l_beg;
 	size_t	l_end;
-	size_t		i;
+	size_t	i;
 
 	if (!s1)
 		return (0);
