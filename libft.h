@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:58:47 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/23 18:47:21 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/12/07 17:16:15 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_puthex_fd(long int n, int fd,int upper);
+void	ft_putaddr_fd(void *addr, int fd);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
