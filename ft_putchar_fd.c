@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 21:41:50 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/20 16:08:20 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:31:43 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,10 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+}
+
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
 }

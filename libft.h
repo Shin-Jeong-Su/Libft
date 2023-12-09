@@ -6,7 +6,7 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:58:47 by jeshin            #+#    #+#             */
-/*   Updated: 2023/12/07 17:16:15 by jeshin           ###   ########.fr       */
+/*   Updated: 2023/12/09 18:29:10 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,17 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
+int		ft_putchar(char c);
 void	ft_putstr_fd(char *s, int fd);
+int		ft_putstr(char *s);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_puthex_fd(long int n, int fd,int upper);
+void	ft_putnbr_cnt(int n, int *num);
+void	ft_putnbr_unsigned(unsigned int n, int *num);
+void	ft_puthex_fd(long int n, int fd, int upper);
+void	ft_puthex_cnt(unsigned long int n, int upper, int *num);
 void	ft_putaddr_fd(void *addr, int fd);
+void	ft_putaddr_cnt(void *addr, int *num);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
