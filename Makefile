@@ -11,6 +11,7 @@ RM = rm -f
 SRCS_FILES = ft_isalpha.c\
 				ft_isdigit.c\
 				ft_atoi.c\
+				ft_atol.c\
 				ft_bzero.c\
 				ft_calloc.c\
 				ft_isalnum.c\
@@ -46,6 +47,7 @@ SRCS_FILES = ft_isalpha.c\
 				ft_substr.c\
 				ft_tolower.c\
 				ft_toupper.c\
+				get_next_line.c
 
 BONUS_FILES = ft_lstadd_back.c\
 				ft_lstadd_front.c\
@@ -66,20 +68,20 @@ OBJS = $(SRCS:.c=.o)
 all : $(NAME) 
 
 $(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 bonus : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
-	touch bonus
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+	@touch bonus
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS) $(OBJS_BONUS) bonus
+	@$(RM) $(OBJS) $(OBJS_BONUS) bonus
 
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re : fclean all
 

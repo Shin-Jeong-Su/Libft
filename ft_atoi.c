@@ -6,18 +6,18 @@
 /*   By: jeshin <jeshin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:12:36 by jeshin            #+#    #+#             */
-/*   Updated: 2023/10/19 10:29:21 by jeshin           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:00:17 by jeshin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_space(const char ch)
+static int	is_space(const char ch)
 {
 	if (ch == 32 || (ch >= 9 && ch <= 13))
 		return (1);
 	return (0);
 }
 
-int	is_digit(const char ch)
+static int	is_digit(const char ch)
 {
 	if (ch >= '0' && ch <= '9')
 		return (1);
